@@ -1,5 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, SafeAreaView, ScrollView, View, Image, Dimensions } from 'react-native';
+import { Button } from 'react-native-paper';
+import { color } from 'react-native-reanimated';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const win = Dimensions.get('window');
 const ratio = win.width / 541; //541 is actual image width
@@ -62,7 +65,7 @@ const TabOneScreen = () => {
 
 
 
-        
+
         <View style={styles.newsbar}>
           <View style={styles.left}>
             <Image source={{ uri: 'https://images.prothomalo.com/prothomalo-bangla%2F2021-08%2Fdc0eee7b-49db-4971-9fca-94148a9b0ab8%2FUntitled_11.png?rect=0%2C11%2C640%2C427&auto=format%2Ccompress&fmt=webp&format=webp&w=320&dpr=1.0' }} style={styles.barImage}>
@@ -79,7 +82,7 @@ const TabOneScreen = () => {
         </View>
 
 
-        
+
         <View style={styles.newsbar}>
           <View style={styles.left}>
             <Image source={{ uri: 'https://images.prothomalo.com/prothomalo-bangla%2F2021-08%2Fdc0eee7b-49db-4971-9fca-94148a9b0ab8%2FUntitled_11.png?rect=0%2C11%2C640%2C427&auto=format%2Ccompress&fmt=webp&format=webp&w=320&dpr=1.0' }} style={styles.barImage}>
@@ -91,9 +94,21 @@ const TabOneScreen = () => {
             </Text>
             <Text style={styles.date}>০৫ আগস্ট ২০২১, ১৪: ১৫</Text>
           </View>
-
-
         </View>
+
+        <Button style={{
+          width: 120,
+          backgroundColor: '#999',
+          marginTop: 10,
+          marginBottom: 15,
+          borderTopRightRadius: 50,
+          borderBottomRightRadius: 50,
+        }}
+        
+          icon="arrow-right-circle" mode="contained" onPress={() => console.log('Pressed')}>
+
+          Press me
+        </Button>
 
 
 
@@ -152,7 +167,7 @@ const TabOneScreen = () => {
         </View>
 
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaView >
   );
 }
 
@@ -191,14 +206,14 @@ const styles = StyleSheet.create({
 
   left: {
 
-   width:'40%',
-   height:150,
+    width: '40%',
+    height: 150,
   },
 
   right: {
-    paddingLeft:10,
-    height:150,
-    width:'60%',
+    paddingLeft: 10,
+    height: 150,
+    width: '60%',
   },
 
   newsbox: {
@@ -222,15 +237,15 @@ const styles = StyleSheet.create({
 
   newsbar: {
 
-    padding:5,
-    maxHeight:120,
-    
-    flexDirection:'row',
-  
+    padding: 5,
+    maxHeight: 120,
+
+    flexDirection: 'row',
+
     flex: 1,
 
     backgroundColor: '#fff',
-   
+
     // borderRadius: 5,
     marginBottom: 5,
 
@@ -243,8 +258,8 @@ const styles = StyleSheet.create({
     shadowRadius: 6.27,
     elevation: 10,
 
-    
-    
+
+
   },
 
 });
