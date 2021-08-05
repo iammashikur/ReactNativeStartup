@@ -96,18 +96,21 @@ const TabOneScreen = () => {
           </View>
         </View>
 
-        <Button style={{
+        <Button 
+
+    
+        style={{
           width: 120,
-          backgroundColor: '#999',
           marginTop: 10,
           marginBottom: 15,
           borderTopRightRadius: 50,
           borderBottomRightRadius: 50,
+          
+          
         }}
-        
-          icon="arrow-right-circle" mode="contained" onPress={() => console.log('Pressed')}>
 
-          Press me
+          icon="arrow-right-circle" mode="text" onPress={() => console.log('Pressed')}>
+          সিলেট        
         </Button>
 
 
@@ -183,23 +186,29 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: 362 * ratio, //362 is actual height of image
-    padding: 10,
+   
   },
 
   barImage: {
     width: '100%',
     height: 150 * ratio, //362 is actual height of image
-    padding: 10,
+  
   },
 
   text: {
-    fontSize: 20,
+    paddingLeft: 10,
+    paddingRight: 10,
+    fontFamily: 'AdorNoirrit',
+    fontSize: 22,
     marginTop: 10,
     marginBottom: 5,
   },
 
   date: {
-    fontSize: 20,
+    paddingLeft: 10,
+    paddingRight: 10,
+    fontFamily: 'AdorNoirrit',
+    fontSize: 17,
     marginBottom: 10,
     color: '#777',
   },
@@ -217,22 +226,21 @@ const styles = StyleSheet.create({
   },
 
   newsbox: {
-    padding: 10,
-    flex: 1,
 
+    flex: 1,
+    padding:10,
     backgroundColor: '#fff',
     minWidth: '95%',
     // borderRadius: 5,
     marginBottom: 5,
-    shadowColor: "#000",
+    shadowColor: "#999",
     shadowOffset: {
       width: 0,
       height: 5,
     },
-    shadowOpacity: 0.34,
-    shadowRadius: 6.27,
-
-    elevation: 10,
+    shadowOpacity: 0.1,
+    shadowRadius: 0.27,
+    elevation: 2,
   },
 
   newsbar: {
@@ -249,14 +257,14 @@ const styles = StyleSheet.create({
     // borderRadius: 5,
     marginBottom: 5,
 
-    shadowColor: "#000",
+    shadowColor: "#999",
     shadowOffset: {
       width: 0,
       height: 5,
     },
-    shadowOpacity: 0.34,
-    shadowRadius: 6.27,
-    elevation: 10,
+    shadowOpacity: 0.1,
+    shadowRadius: 0.27,
+    elevation: 2,
 
 
 

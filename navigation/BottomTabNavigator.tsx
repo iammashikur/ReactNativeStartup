@@ -29,7 +29,7 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="Home"
+      initialRouteName="প্রচ্ছদ"
       tabBarOptions={{
         activeTintColor: Colors[colorScheme].tint,
         style:{
@@ -53,7 +53,7 @@ export default function BottomTabNavigator() {
       }}>
 
       <BottomTab.Screen
-        name="Home"
+        name="প্রচ্ছদ"
         
         component={TabOneNavigator}
         options={{

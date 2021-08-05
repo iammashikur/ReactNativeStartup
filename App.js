@@ -1,46 +1,50 @@
 import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { configureFonts, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
+import { useFonts } from 'expo-font';
+import { Text, View } from './components/Themed';
+
+import { configureFonts, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
 const fontConfig = {
   web: {
     regular: {
-      fontFamily: 'sans-serif',
+      fontFamily: 'AdorNoirrit',
       fontWeight: 'normal',
     },
     medium: {
-      fontFamily: 'sans-serif-medium',
+      fontFamily: 'AdorNoirrit',
       fontWeight: 'normal',
     },
     light: {
-      fontFamily: 'sans-serif-light',
+      fontFamily: 'AdorNoirrit',
       fontWeight: 'normal',
     },
     thin: {
-      fontFamily: 'sans-serif-thin',
+      fontFamily: 'AdorNoirrit',
       fontWeight: 'normal',
     },
   },
   ios: {
     regular: {
-      fontFamily: 'sans-serif',
+      fontFamily: 'AdorNoirrit',
       fontWeight: 'normal',
     },
     medium: {
-      fontFamily: 'sans-serif-medium',
+      fontFamily: 'AdorNoirrit',
       fontWeight: 'normal',
     },
     light: {
-      fontFamily: 'sans-serif-light',
+      fontFamily: 'AdorNoirrit',
       fontWeight: 'normal',
     },
     thin: {
-      fontFamily: 'sans-serif-thin',
+      fontFamily: 'AdorNoirrit',
       fontWeight: 'normal',
     },
   },
@@ -70,22 +74,26 @@ const theme = {
 };
 
 export default function App() {
+
+  let [fontsLoaded] = useFonts({
+    'AdorNoirrit': require('./assets/fonts/surjo.ttf'),
+  });
+
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
 
-
-
-  if (!isLoadingComplete) {
-    return null;
+  if (!fontsLoaded && !isLoadingComplete) {
+    return <Text> f </Text>;
   } else {
     return (
-
-      <PaperProvider>
+      <PaperProvider theme={theme}>
+        <View style={{ fontFamily: 'AdorNoirrit', fontSize: 40 }}></View>
         <Navigation colorScheme={colorScheme} />
         <StatusBar />
       </PaperProvider>
-
     );
   }
+
+
 }

@@ -9,7 +9,7 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  Home: undefined;
+  প্রচ্ছদ: undefined;
   Category: undefined;
   Search: undefined;
   About: undefined;
