@@ -13,7 +13,9 @@ import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabThreeScreen from '../screens/TabThreeScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList } from '../types';
+import TabFourScreen from '../screens/TabFourScreen';
+
+import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList ,TabFourParamList} from '../types';
 import Header from '../custom/NavHeader'
 
 
@@ -32,13 +34,21 @@ export default function BottomTabNavigator() {
         activeTintColor: Colors[colorScheme].tint,
         style:{
           position:'absolute',
-          borderRadius:15,
-          bottom:10,
-          left:20,
-          right:20,
+         
+
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 0,
+            height: 20,
+          },
+          shadowOpacity: 1.34,
+          shadowRadius: 6.27,
+      
+          elevation: 10,
+        
           height:50,
           paddingTop:5,
-          paddingBottom:5,
+          paddingBottom:7,
         }
       }}>
 
@@ -67,6 +77,15 @@ export default function BottomTabNavigator() {
           tabBarIcon: ({ color }) => <TabBarIcon name="search-outline" color={color} />,
         }}
       />
+
+    <BottomTab.Screen
+        name="About"
+        component={TabThreeNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="alert-circle-outline" color={color} />,
+        }}
+      />
+
     </BottomTab.Navigator>
   );
 }
@@ -119,6 +138,20 @@ function TabThreeNavigator() {
         options={{ headerTitle: props => <Header/> }} 
       />
     </TabThreeStack.Navigator>
+  );
+}
+
+const TabFourStack = createStackNavigator<TabFourParamList>();
+
+function TabFourNavigator() {
+  return (
+    <TabFourStack.Navigator>
+      <TabFourStack.Screen
+        name="TabFourScreen"
+        component={TabFourScreen}
+        options={{ headerTitle: props => <Header/> }} 
+      />
+    </TabFourStack.Navigator>
   );
 }
 

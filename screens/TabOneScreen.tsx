@@ -10,20 +10,89 @@ const TabOneScreen = () => {
       <ScrollView style={styles.scrollView}>
 
         <View style={styles.newsbox}>
-
-          <Image source={{uri: 'https://images.prothomalo.com/prothomalo-bangla%2F2021-08%2Fdc0eee7b-49db-4971-9fca-94148a9b0ab8%2FUntitled_11.png?rect=0%2C11%2C640%2C427&auto=format%2Ccompress&fmt=webp&format=webp&w=320&dpr=1.0'}} style={styles.image}>
-
+          <Image source={{ uri: 'https://images.prothomalo.com/prothomalo-bangla%2F2021-08%2Fdc0eee7b-49db-4971-9fca-94148a9b0ab8%2FUntitled_11.png?rect=0%2C11%2C640%2C427&auto=format%2Ccompress&fmt=webp&format=webp&w=320&dpr=1.0' }} style={styles.image}>
           </Image>
           <Text style={styles.text}>
             দেশে ৯৮ শতাংশ রোগী ডেলটায় সংক্রমিত: গবেষণা
           </Text>
+          <Text style={styles.date}>০৫ আগস্ট ২০২১, ১৪: ১৫</Text>
         </View>
 
 
         <View style={styles.newsbox}>
           <Text style={styles.text}>
-            Lorem ipsdsum dolor sit amet, consectetur adipiscing elit, sed do
+            শিল্প–কলকারখানা খোলা থাকবে, অভ্যন্তরীণ রুটে বিমান চলবে
           </Text>
+          <Text style={styles.date}>০৫ আগস্ট ২০২১, ১৪: ১৫</Text>
+        </View>
+
+
+
+        <View style={styles.newsbox}>
+          <Text style={styles.text}>
+            শিল্প–কলকারখানা খোলা থাকবে, অভ্যন্তরীণ রুটে বিমান চলবে
+          </Text>
+          <Text style={styles.date}>০৫ আগস্ট ২০২১, ১৪: ১৫</Text>
+        </View>
+
+
+        <View style={styles.newsbox}>
+          <Text style={styles.text}>
+            শিল্প–কলকারখানা খোলা থাকবে, অভ্যন্তরীণ রুটে বিমান চলবে
+          </Text>
+          <Text style={styles.date}>০৫ আগস্ট ২০২১, ১৪: ১৫</Text>
+        </View>
+
+
+
+        <View style={styles.newsbar}>
+          <View style={styles.left}>
+            <Image source={{ uri: 'https://images.prothomalo.com/prothomalo-bangla%2F2021-08%2Fdc0eee7b-49db-4971-9fca-94148a9b0ab8%2FUntitled_11.png?rect=0%2C11%2C640%2C427&auto=format%2Ccompress&fmt=webp&format=webp&w=320&dpr=1.0' }} style={styles.barImage}>
+            </Image>
+          </View>
+          <View style={styles.right}>
+            <Text style={styles.text}>
+              দেশে ৯৮ শতাংশ রোগী ডেলটায় সংক্রমিত: গবেষণা
+            </Text>
+            <Text style={styles.date}>০৫ আগস্ট ২০২১, ১৪: ১৫</Text>
+          </View>
+
+
+        </View>
+
+
+
+        
+        <View style={styles.newsbar}>
+          <View style={styles.left}>
+            <Image source={{ uri: 'https://images.prothomalo.com/prothomalo-bangla%2F2021-08%2Fdc0eee7b-49db-4971-9fca-94148a9b0ab8%2FUntitled_11.png?rect=0%2C11%2C640%2C427&auto=format%2Ccompress&fmt=webp&format=webp&w=320&dpr=1.0' }} style={styles.barImage}>
+            </Image>
+          </View>
+          <View style={styles.right}>
+            <Text style={styles.text}>
+              দেশে ৯৮ শতাংশ রোগী ডেলটায় সংক্রমিত: গবেষণা
+            </Text>
+            <Text style={styles.date}>০৫ আগস্ট ২০২১, ১৪: ১৫</Text>
+          </View>
+
+
+        </View>
+
+
+        
+        <View style={styles.newsbar}>
+          <View style={styles.left}>
+            <Image source={{ uri: 'https://images.prothomalo.com/prothomalo-bangla%2F2021-08%2Fdc0eee7b-49db-4971-9fca-94148a9b0ab8%2FUntitled_11.png?rect=0%2C11%2C640%2C427&auto=format%2Ccompress&fmt=webp&format=webp&w=320&dpr=1.0' }} style={styles.barImage}>
+            </Image>
+          </View>
+          <View style={styles.right}>
+            <Text style={styles.text}>
+              দেশে ৯৮ শতাংশ রোগী ডেলটায় সংক্রমিত: গবেষণা
+            </Text>
+            <Text style={styles.date}>০৫ আগস্ট ২০২১, ১৪: ১৫</Text>
+          </View>
+
+
         </View>
 
 
@@ -102,10 +171,34 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 
+  barImage: {
+    width: '100%',
+    height: 150 * ratio, //362 is actual height of image
+    padding: 10,
+  },
+
   text: {
     fontSize: 20,
-    marginTop:10,
-    marginBottom:10,
+    marginTop: 10,
+    marginBottom: 5,
+  },
+
+  date: {
+    fontSize: 20,
+    marginBottom: 10,
+    color: '#777',
+  },
+
+  left: {
+
+   width:'40%',
+   height:150,
+  },
+
+  right: {
+    paddingLeft:10,
+    height:150,
+    width:'60%',
   },
 
   newsbox: {
@@ -115,7 +208,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     minWidth: '95%',
     // borderRadius: 5,
-    marginBottom: 10,
+    marginBottom: 5,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -125,6 +218,33 @@ const styles = StyleSheet.create({
     shadowRadius: 6.27,
 
     elevation: 10,
+  },
+
+  newsbar: {
+
+    padding:5,
+    maxHeight:120,
+    
+    flexDirection:'row',
+  
+    flex: 1,
+
+    backgroundColor: '#fff',
+   
+    // borderRadius: 5,
+    marginBottom: 5,
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+    elevation: 10,
+
+    
+    
   },
 
 });
