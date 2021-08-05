@@ -14,6 +14,11 @@ import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabThreeScreen from '../screens/TabThreeScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList } from '../types';
+import Header from '../custom/NavHeader'
+
+
+
+
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -23,27 +28,43 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="Home"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      tabBarOptions={{
+        activeTintColor: Colors[colorScheme].tint,
+        style:{
+          position:'absolute',
+          borderRadius:15,
+          bottom:10,
+          left:20,
+          right:20,
+          height:50,
+          paddingTop:5,
+          paddingBottom:5,
+        }
+      }}>
+
       <BottomTab.Screen
         name="Home"
+        
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="home-outline" color={color} />,
         }}
+        
       />
+
       <BottomTab.Screen
         name="Category"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="file-tray-full-outline" color={color} />,
         }}
       />
 
-<BottomTab.Screen
+      <BottomTab.Screen
         name="Search"
         component={TabThreeNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="search-outline" color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -53,7 +74,7 @@ export default function BottomTabNavigator() {
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
 function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-  return <Ionicons size={20} style={{ marginBottom: -3 }} {...props} />;
+  return <Ionicons size={20} style={{ marginBottom: 0 }} {...props} />;
 }
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
@@ -66,7 +87,7 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="TabOneScreen"
         component={TabOneScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+        options={{ headerTitle: props => <Header/> }} 
       />
     </TabOneStack.Navigator>
   );
@@ -80,7 +101,7 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+        options={{ headerTitle: props => <Header/> }} 
       />
     </TabTwoStack.Navigator>
   );
@@ -95,7 +116,7 @@ function TabThreeNavigator() {
       <TabThreeStack.Screen
         name="TabThreeScreen"
         component={TabThreeScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+        options={{ headerTitle: props => <Header/> }} 
       />
     </TabThreeStack.Navigator>
   );
